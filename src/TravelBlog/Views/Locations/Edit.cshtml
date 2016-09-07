@@ -1,0 +1,23 @@
+﻿@model TravelBlog.Models.Location
+
+@{
+    ViewData["Title"] = "Location - Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Edit</h2>
+<hr />
+<h4>Edit this location: @Html.DisplayFor(model => model.CityName), @Html.DisplayFor(model => model.Country)</h4>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.LocationId)
+
+    @Html.LabelFor(model => model.CityName)
+    @Html.EditorFor(model => model.CityName)
+
+    @Html.LabelFor(model => model.Country)
+    @Html.EditorFor(model => model.Country)
+
+
+    <input type="submit" value="Save" class="btn btn-default" />
+}
+@Html.ActionLink("Back to List", "Index")
