@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<TravelBlog.Models.People>
+
+<h2>Travel Blog</h2>
+<hr />
+
+<ul>
+@foreach (var listPeople in Model)
+{
+    <li>@Html.ActionLink(listPeople.Name,"Details", new { id = listPeople.PersonId }) | @Html.ActionLink("Edit","Edit",new { id = listPeople.PersonId}) | @Html.ActionLink("Delete", "Delete", new { id = listPeople.PersonId })</li>
+}
+</ul>
+<p>@Html.ActionLink("Create New", "Create") | @Html.ActionLink("Back to Locations","Index", "Locations")</p>

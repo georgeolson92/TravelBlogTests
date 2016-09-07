@@ -1,0 +1,18 @@
+﻿@model TravelBlog.Models.People
+
+@{ 
+    ViewData["Title"] = "People - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>People Details</h2>
+<hr />
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+
+<ul>
+@foreach (var experience in Model.PeopleExperiences)
+{
+    <li>@Html.ActionLink("an experience", "Details", "Experiences", new { id = experience.ExperienceId })</li>
+}
+</ul>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.PersonId}) | @Html.ActionLink("Back to List", "Index")</p>

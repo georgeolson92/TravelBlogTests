@@ -9,11 +9,18 @@ namespace TravelBlog.Models
 
         public DbSet<Experience> Experiences { get; set; }
 
+        public DbSet<People> Peoples { get; set; }
+
+        public DbSet<PeopleExperience> PeopleExperiences { get; set; }
+
+        public DbSet<PeopleLocation> PeopleLocations { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
+
+            builder.Entity<PeopleExperience>()
+                .HasKey(t => new { t.PersonId, t.ExperienceId });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
