@@ -9,4 +9,12 @@
 <p>@Html.DisplayNameFor(model => model.CityName): @Html.DisplayFor(model => model.CityName)</p>
 <p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</p>
 
+<h3>Experiences:</h3>
+<ul>
+@foreach (var experience in Model.Experiences)
+{
+    <li>@Html.ActionLink(experience.Title, "Details", "Experiences", new { id = experience.ExperienceId })</li>
+}
+</ul>
+
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId}) | @Html.ActionLink("Back to List", "Index")</p>

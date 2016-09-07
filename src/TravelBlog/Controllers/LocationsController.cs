@@ -20,7 +20,7 @@ namespace TravelBlog.Controllers
 
         public IActionResult Details(int id)
         {
-            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
+            var thisLocation = db.Locations.Include(locations => locations.Experiences).FirstOrDefault(locations => locations.LocationId == id);
             return View(thisLocation);
         }
 
