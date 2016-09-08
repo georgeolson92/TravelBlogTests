@@ -14,12 +14,15 @@
 }
 .image-button {
     position: absolute;
-    bottom:600px;
-    width:100px;
-    height:40px;
+    bottom:40%;
+    left: 40%;
+    width:250px;
+    height:80px;
     background: none;
     color: #ffffff;
     border: 3px solid #fff;
+    font-size: 2.7em;
+    
 }
 
 .image-button:hover {

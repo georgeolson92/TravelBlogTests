@@ -17,8 +17,14 @@
 
 
         <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+        <h3>People:</h3>
+        <ul>
+            @foreach (var people in Model.PeopleExperiences)
+            {
 
-        
+                <li> @Html.ActionLink(people.People.Name, "Details", "Peoples", new { id = people.PersonId }) </li>
+            }
+        </ul>
     </div>
     <div class="col-md-12">
         <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId })</p>
