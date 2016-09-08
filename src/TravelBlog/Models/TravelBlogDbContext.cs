@@ -15,12 +15,10 @@ namespace TravelBlog.Models
 
         public DbSet<PeopleLocation> PeopleLocations { get; set; }
 
-
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
-            builder.Entity<PeopleExperience>()
-                .HasKey(t => new { t.PersonId, t.ExperienceId });
+            base.OnModelCreating(builder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

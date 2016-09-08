@@ -26,8 +26,7 @@ namespace travelblog.Migrations
                 name: "PeopleExperiences",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    id = table.Column<int>(nullable: false),
                     ExperienceId = table.Column<int>(nullable: false),
                     PersonId = table.Column<int>(nullable: false)
                 },

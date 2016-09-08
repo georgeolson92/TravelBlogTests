@@ -29,9 +29,11 @@ namespace TravelBlog.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Experience experience)
+        public IActionResult Create(Experience experience, People person)
         {
             db.Experiences.Add(experience);
+            var newPeopleExperience = new PeopleExperience{  PersonId = person.PersonId, ExperienceId = experience.ExperienceId };
+            db.PeopleExperiences.Add(newPeopleExperience);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
