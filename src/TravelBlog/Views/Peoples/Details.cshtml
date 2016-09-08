@@ -9,9 +9,17 @@
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 
 <ul>
-@foreach (var experience in Model.PeopleExperiences)
+@if (Model.PeopleExperiences.Count == 0)
 {
-    <li>@Html.ActionLink("an experience", "Details", "Experiences", new { id = experience.ExperienceId })</li>
+    <li>No Experiences Yet</li>
+}
+else
+{
+    @foreach (var experience in Model.PeopleExperiences)
+    {
+
+    <li> @Html.ActionLink(experience.Experience.Title, "Details", "Experiences", new { id = experience.ExperienceId }) </li>
+    }
 }
 </ul>
 

@@ -19,9 +19,26 @@ namespace TravelBlog.Controllers
             return View(db.Peoples.ToList());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Details(int id)
         {
-            var thisPeople = db.Peoples.Include(peoples => peoples.PeopleExperiences).FirstOrDefault(peoples => peoples.PersonId == id);
+            
+            var thisPeople = db.Peoples
+                .Include(peoples => peoples.PeopleExperiences)
+                .ThenInclude(peoples => peoples.Experience)
+                .FirstOrDefault(peoples => peoples.PersonId == id);
+            var experiences = thisPeople.PeopleExperiences.Select(pe => pe.Experience).ToList();
+            //var model = new Dictionary<string, object>;
+            //model.Add("people", thisPeople);
+            //model.Add("experiences", experiences);
+            foreach(PeopleExperience pE in thisPeople.PeopleExperiences)
+            {
+                Console.WriteLine(pE.Experience.Title);
+            }
             return View(thisPeople);
         }
 
