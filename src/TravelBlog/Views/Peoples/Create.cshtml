@@ -15,6 +15,12 @@
     @Html.LabelFor(model => model.PeopleLocations)
     @Html.DropDownList("LocationId")
 
+    @Html.LabelFor(model => model.Bio)
+    @Html.EditorFor(model => model.Bio)
+
+    @Html.LabelFor(model => model.ImageURL)
+    @Html.EditorFor(model => model.ImageURL)
+
     <input type="submit" value="Create" class="btn btn-default" />
 }
 

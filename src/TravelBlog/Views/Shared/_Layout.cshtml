@@ -3,11 +3,33 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <span class="navbar-brand">@Html.ActionLink("Travel Blog", "Index", "Home")</span>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    @Html.ActionLink("Locations", "Index", "Locations")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Experiences", "Index", "Experiences")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("People", "Index", "Peoples")
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+        <div>
+            @RenderBody()
+        </div>
+    
 </body>
 </html>

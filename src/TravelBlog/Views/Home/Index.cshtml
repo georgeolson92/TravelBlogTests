@@ -1,11 +1,9 @@
-﻿@*
+﻿@{
+    ViewData["Title"] = "Travel Blog Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
-*@
-@{
 }
+<div class="image-container">
+    <img src="http://wallpapercave.com/wp/KajeaJB.jpg" class="location-image" />
+    @Html.ActionLink("Welcome","Index", "Locations",null, new { @class = "btn btn-large btn-default image-button"})
+</div>
 
-<h2>Hello world!</h2>
-
-@Html.ActionLink("Locations", "Index", "Locations")
-@Html.ActionLink("Experiences", "Index", "Experiences")
-@Html.ActionLink("Peoples", "Index", "Peoples")

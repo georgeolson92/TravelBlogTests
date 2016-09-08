@@ -21,6 +21,10 @@ namespace travelblog.Migrations
                     b.Property<int>("ExperienceId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Description");
+
+                    b.Property<string>("ImageURL");
+
                     b.Property<int>("LocationId");
 
                     b.Property<string>("Title");
@@ -41,6 +45,10 @@ namespace travelblog.Migrations
 
                     b.Property<string>("Country");
 
+                    b.Property<string>("Description");
+
+                    b.Property<string>("ImageURL");
+
                     b.HasKey("LocationId");
 
                     b.ToTable("Locations");
@@ -50,6 +58,10 @@ namespace travelblog.Migrations
                 {
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Bio");
+
+                    b.Property<string>("ImageURL");
 
                     b.Property<string>("Name");
 

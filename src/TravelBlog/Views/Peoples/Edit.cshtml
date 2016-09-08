@@ -6,7 +6,7 @@
 }
 <h2>Edit</h2>
 <hr />
-<h4>Edit this people: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this person: @Html.DisplayFor(model => model.Name)</h4>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PersonId)
@@ -16,6 +16,12 @@
 
     @Html.LabelFor(model => model.PeopleLocations)
     @Html.DropDownList("LocationId")
+
+    @Html.LabelFor(model => model.Bio)
+    @Html.EditorFor(model => model.Bio)
+
+    @Html.LabelFor(model => model.ImageURL)
+    @Html.EditorFor(model => model.ImageURL)
 
 
     <input type="submit" value="Save" class="btn btn-default" />

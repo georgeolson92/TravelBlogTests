@@ -6,21 +6,32 @@
 }
 <h2>People Details</h2>
 <hr />
-<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+<h1>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h1>
 
-<ul>
-@if (Model.PeopleExperiences.Count == 0)
-{
-    <li>No Experiences Yet</li>
-}
-else
-{
-    @foreach (var experience in Model.PeopleExperiences)
-    {
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.ImageURL" class="avatar-image" />
+    </div>
+    <div class="col-md-8">
+        <p>@Html.DisplayNameFor(model => model.Bio): @Html.DisplayFor(model => model.Bio)</p>
 
-    <li> @Html.ActionLink(experience.Experience.Title, "Details", "Experiences", new { id = experience.ExperienceId }) </li>
-    }
-}
-</ul>
+        <h4>Experiences:</h4>
+        <ul>
+            @if (Model.PeopleExperiences.Count == 0)
+            {
+                <li>No Experiences Yet</li>
+            }
+            else
+            {
+                @foreach (var experience in Model.PeopleExperiences)
+                {
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.PersonId}) | @Html.ActionLink("Back to List", "Index")</p>
+                    <li> @Html.ActionLink(experience.Experience.Title, "Details", "Experiences", new { id = experience.ExperienceId }) </li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.PersonId })</p>
+    </div>
+ </div>

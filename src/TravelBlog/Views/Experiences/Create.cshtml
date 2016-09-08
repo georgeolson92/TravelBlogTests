@@ -18,6 +18,12 @@
     @Html.LabelFor(model => model.PeopleExperiences)
     @Html.DropDownList("PersonId")
 
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.ImageURL)
+    @Html.EditorFor(model => model.ImageURL)
+
     <input type="submit" value="Create" class="btn btn-default" />
 }
 

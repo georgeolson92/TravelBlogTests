@@ -6,7 +6,21 @@
 }
 <h2>Experience Details</h2>
 <hr />
-<p>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</p>
-<p>City, Country: @Html.DisplayFor(model => model.Location.CityName), @Html.DisplayFor(model => model.Location.Country)</p>
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId}) | @Html.ActionLink("Back to List", "Index")</p>
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.ImageURL" class="location-image" />
+    </div>
+    <div class="col-md-8">
+        <p>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</p>
+        <p>City, Country: @Html.DisplayFor(model => model.Location.CityName), @Html.DisplayFor(model => model.Location.Country)</p>
+
+
+        <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
+        
+    </div>
+    <div class="col-md-12">
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId })</p>
+    </div>
+</div>

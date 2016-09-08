@@ -3,13 +3,15 @@
 }
 @model IEnumerable<TravelBlog.Models.Experience>
 
-<h2>Travel Blog</h2>
-<hr />
+<div class="container">
+    <h2>Travel Blog</h2>
+    <hr />
 
-<ul>
-@foreach (var listExperience in Model)
-{
-    <li>@Html.ActionLink(listExperience.Title,"Details", new { id = listExperience.ExperienceId }) | @Html.ActionLink("Edit","Edit",new { id = listExperience.ExperienceId}) | @Html.ActionLink("Delete", "Delete", new { id = listExperience.ExperienceId })</li>
-}
-</ul>
-<p>@Html.ActionLink("Create New", "Create") | @Html.ActionLink("Back to Locations","Index", "Locations")</p>
+    <ul>
+        @foreach (var listExperience in Model)
+        {
+            <li>@Html.ActionLink(listExperience.Title, "Details", new { id = listExperience.ExperienceId }) | @Html.ActionLink("Edit", "Edit", new { id = listExperience.ExperienceId }) | @Html.ActionLink("Delete", "Delete", new { id = listExperience.ExperienceId })</li>
+        }
+    </ul>
+    <p>@Html.ActionLink("Create New", "Create") | @Html.ActionLink("Back to Locations", "Index", "Locations")</p>
+</div>

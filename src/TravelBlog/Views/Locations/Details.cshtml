@@ -1,20 +1,31 @@
 ﻿@model TravelBlog.Models.Location
 
-@{ 
+@{
     ViewData["Title"] = "Location - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Location Details</h2>
 <hr />
-<p>@Html.DisplayNameFor(model => model.CityName): @Html.DisplayFor(model => model.CityName)</p>
-<p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</p>
 
-<h3>Experiences:</h3>
-<ul>
-@foreach (var experience in Model.Experiences)
-{
-    <li>@Html.ActionLink(experience.Title, "Details", "Experiences", new { id = experience.ExperienceId })</li>
-}
-</ul>
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.ImageURL" class="location-image" />
+    </div>
+    <div class="col-md-8">
+        <p>@Html.DisplayNameFor(model => model.CityName): @Html.DisplayFor(model => model.CityName)</p>
+        <p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</p>
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId}) | @Html.ActionLink("Back to List", "Index")</p>
+        <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
+        <h4>Experiences:</h4>
+        <ul>
+            @foreach (var experience in Model.Experiences)
+            {
+                <li>@Html.ActionLink(experience.Title, "Details", "Experiences", new { id = experience.ExperienceId })</li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId })</p>
+    </div>
+    </div>
