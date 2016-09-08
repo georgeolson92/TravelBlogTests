@@ -1,0 +1,29 @@
+﻿body {
+}
+
+.location-image {
+    width: 100%;
+}
+
+.navbar {
+    margin-bottom: -10px;
+}
+.image-container {
+     position:relative;
+     text-align:center;
+}
+.image-button {
+    position: absolute;
+    bottom:600px;
+    width:100px;
+    height:40px;
+    background: none;
+    color: #ffffff;
+    border: 3px solid #fff;
+}
+
+.image-button:hover {
+    background: none;
+    color: #ffffff;
+    border: 3px solid #fff;
+}
