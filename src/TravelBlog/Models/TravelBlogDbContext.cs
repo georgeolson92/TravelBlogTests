@@ -5,15 +5,15 @@ namespace TravelBlog.Models
 {
     public class TravelBlogDbContext : DbContext
     {
-        public DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
 
-        public DbSet<Experience> Experiences { get; set; }
+        public virtual DbSet<Experience> Experiences { get; set; }
 
-        public DbSet<People> Peoples { get; set; }
+        public virtual DbSet<People> Peoples { get; set; }
 
-        public DbSet<PeopleExperience> PeopleExperiences { get; set; }
+        public virtual DbSet<PeopleExperience> PeopleExperiences { get; set; }
 
-        public DbSet<PeopleLocation> PeopleLocations { get; set; }
+        public virtual DbSet<PeopleLocation> PeopleLocations { get; set; }
 
         
         protected override void OnModelCreating(ModelBuilder builder)

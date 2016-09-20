@@ -17,5 +17,25 @@ namespace TravelBlog.Models
         public string ImageURL { get; set; }
         public virtual ICollection<PeopleExperience> PeopleExperiences { get; set; }
         public virtual ICollection<PeopleLocation> PeopleLocations { get; set; }
+
+        public override bool Equals(System.Object otherPeople)
+        {
+            if (!(otherPeople is People))
+            {
+                return false;
+            }
+            else
+            {
+                People newPeople = (People)otherPeople;
+                return this.PersonId.Equals(newPeople.PersonId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.PersonId.GetHashCode();
+        }
     }
+
+    
 }

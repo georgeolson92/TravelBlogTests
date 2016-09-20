@@ -15,7 +15,8 @@
       "type": "build"
     },
     "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final",
-    "bootstrap": "3.3.7"  },
+    "bootstrap": "3.3.7",
+    "Microsoft.AspNetCore.Http.Extensions": "1.0.0"  },
 
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
